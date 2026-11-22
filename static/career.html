@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>InterviewX — Career cockpit</title><meta name="theme-color" content="#111713">
+<link rel="stylesheet" href="/static/career.css"><script src="/static/career.js" defer></script></head>
+<body>
+<div class="shell">
+<aside class="sidebar">
+ <a class="brand" href="/"><div class="brand-symbol">i<span>X</span></div><div><strong>Interview<span>X</span></strong><small>CAREER OPERATING SYSTEM</small></div></a>
+ <div class="side-label">CAREER WORKSPACE</div>
+ <button class="nav active" data-tab="pipeline">◈ &nbsp; Application pipeline <small>01</small></button>
+ <button class="nav" data-tab="learning">✳ &nbsp; Skill prescriptions <small>02</small></button>
+ <button class="nav" data-tab="inbox">◉ &nbsp; Inbox intelligence <small>03</small></button>
+ <button class="nav" data-tab="agenda">▣ &nbsp; Interview planner <small>04</small></button>
+ <div class="side-label extra">YOUR TRAINING</div><a href="/" class="nav link-nav">↗ &nbsp; Voice interview studio</a>
+ <div class="side-footer"><div class="online"><i></i> LOCAL SERVER ACTIVE</div><div id="identity" class="identity">Signed-in career workspace</div><button id="logout" class="outline-light">Sign out ↗</button><p>v3.0 / EXPLAINABLE COACHING</p></div>
+</aside>
+<main class="main"><header class="topbar"><span>INTERVIEWX / <strong id="breadcrumb">APPLICATION PIPELINE</strong></span><div class="topright"><span class="badge small">● PERSONAL WORKSPACE</span><span class="avatar" id="avatar">IX</span></div></header>
+<div class="notice" id="notice" hidden role="status" aria-live="polite"></div>
+<section id="pipeline" class="screen">
+ <div class="hero"><div class="hero-left"><span class="eyebrow">◉ YOUR NEXT MOVE STARTS HERE</span><h1>Make progress<br><em>visible.</em></h1><p>Every application, every interview, every lesson — organized into one career journey.</p><button class="primary" id="addApp">+ TRACK AN APPLICATION</button></div><div class="hero-right"><div class="hero-circle">X</div><div class="hero-caption">PLAN / PRACTICE / PROGRESS</div></div></div>
+ <div class="section-title"><div><span class="eyebrow">01 / APPLICATION INTELLIGENCE</span><h2>Your opportunity pipeline.</h2></div><span class="subtle">Drag cards to change stages · or use the Move control</span></div>
+ <div class="stat-grid"><div class="stat"><label>ALL APPLICATIONS</label><b id="statTotal">—</b><small>tracked opportunities</small></div><div class="stat"><label>INTERVIEWS SCHEDULED</label><b id="statScheduled">—</b><small>upcoming conversations</small></div><div class="stat"><label>OFFERS RECEIVED</label><b id="statOffer">—</b><small>recorded offers</small></div><div class="stat"><label>REQUIRES FOLLOW UP</label><b id="statFollow">—</b><small>applied or screening</small></div></div>
+ <div class="board-scroll"><div id="kanban" class="kanban" aria-label="Job application Kanban board"></div></div>
+ <div class="bottom-panels"><div class="info"><h3>Application intelligence</h3><p id="pipelineInsight">Your application evidence will appear here.</p></div><div class="info black"><span class="eyebrow">INTEGRATION</span><h3>From inbox → next action.</h3><p>Connect Gmail voluntarily, review detected messages, and confirm which updates belong in your pipeline.</p><button class="mini lime" data-go="inbox">EXPLORE EMAIL INTELLIGENCE ↗</button></div></div>
+</section>
+<section id="learning" class="screen" hidden>
+ <div class="page-intro"><span class="eyebrow">02 / LEARNING INTELLIGENCE</span><h1>Learn what your<br><em>answers reveal.</em></h1><p>Courses and micro-missions matched to the areas your interview practice suggests reviewing.</p></div>
+ <div class="learning-header"><div class="focus-card"><span class="eyebrow">YOUR NEXT SKILL FOCUS</span><h2 id="skillFocus">Loading your recommendations…</h2><p id="skillReason"></p><div class="focus-foot">◈ Recommendations are transparent guidance — not paid placement.</div></div><div class="mission-card"><span class="eyebrow">ACTIVE LEARNING LOOP</span><h3>Practice → Diagnose → Learn → Retry.</h3><p>Choose a resource below, mark progress, and return to the interview studio to test what changed.</p><a href="/" class="mini lime">LAUNCH VOICE INTERVIEW ↗</a></div></div>
+ <div class="toolbar"><label for="skillFilter">Filter skill</label><select id="skillFilter"><option value="">Personalized recommendation</option></select><span class="subtle">External provider prices and enrollment can change.</span></div>
+ <div id="courses" class="course-grid"></div>
+ <div class="info" style="margin-bottom:16px"><span class="eyebrow">PERSONALIZED RECOVERY MISSIONS</span><h3>Three things you can practice today.</h3><ol id="missions" class="mission-list"><li>Loading…</li></ol></div>
+ <div class="info"><h3>How recommendations work</h3><p>InterviewX compares recent practice feedback with skill categories. It does not know whether you will get hired. We currently have no affiliate deals or paid placements. Future sponsored recommendations must be explicitly labeled and never silently distort relevance ranking.</p></div>
+</section>
+<section id="inbox" class="screen" hidden>
+ <div class="page-intro"><span class="eyebrow">03 / CONSENT-BASED CONNECTION</span><h1>Your inbox.<br><em>Finally actionable.</em></h1><p>Optional Gmail connection — review suggestions before InterviewX changes anything. No Gmail password is ever requested.</p></div>
+ <div class="integration-grid"><div class="connect-card"><div class="connect-glyph">M</div><h3>Gmail intelligence</h3><p id="gmailStatus">Checking…</p><div class="btn-row"><button id="connectGmail" class="primary">CONNECT GMAIL</button><button id="disconnectGmail" class="secondary" hidden>Disconnect</button></div><label class="autosync" id="autoSyncWrapper" hidden><input type="checkbox" id="autoGmail"> Check for new interview/application mail approximately every 15 minutes while InterviewX is running.</label>
+<p class="fine" id="autoSyncStatus"></p><p class="fine">Read-only permission. Google OAuth requires your credentials and approval.</p></div>
+  <div class="connect-card"><div class="connect-glyph calendar">31</div><h3>Google Calendar</h3><p id="calendarStatus">Checking…</p><div class="btn-row"><button id="connectCalendar" class="primary">CONNECT CALENDAR</button><button id="disconnectCalendar" class="secondary" hidden>Disconnect</button></div><p class="fine">Event-creation permission; events are created only when you click Add to Calendar.</p></div></div>
+ <div class="inbox-bar"><div><h2>Evidence review queue</h2><p class="subtle">Email suggestions never silently change your tracker.</p></div><div class="btn-row"><button class="secondary" id="loadDemoMail">Load fictional examples</button><button class="primary" id="syncMail">SCAN CONNECTED GMAIL</button></div></div>
+ <div id="suggestions" class="suggestions"></div><div class="privacy"><strong>Privacy and accuracy</strong><p>Only a limited sample of potentially relevant messages is scanned on demand. Inferred companies, statuses, and dates can be wrong. Always review before accepting. Disconnecting Gmail deletes stored refresh credentials and cached suggestion excerpts.</p></div>
+</section>
+<section id="agenda" class="screen" hidden>
+ <div class="page-intro"><span class="eyebrow">04 / AUTOMATIC PREPARATION</span><h1>Never enter an<br><em>interview unprepared.</em></h1><p>When a confirmed interview date is saved, InterviewX automatically creates a preparation checklist. Add the interview to Google Calendar with one click.</p></div>
+ <div class="agenda-grid"><div><div class="section-title"><h2>Upcoming interviews</h2><span class="subtle">Local time shown for each saved event</span></div><div id="agendaItems" class="agenda-list"></div></div>
+  <div class="prep-side"><span class="eyebrow">YOUR PREPARATION SYSTEM</span><h2>Interview countdown protocol.</h2><p>2 days before: company research and project examples.</p><p>1 day before: targeted mock interview and answer review.</p><p>2 hours before: check joining link, microphone and notes.</p><div class="divider"></div><a href="/" class="mini lime">PRACTICE ALOUD ↗</a></div></div>
+</section>
+<footer class="footer"><span>INTERVIEWX / YOUR CAREER, UNDERSTOOD.</span><span>PRIVATE-BY-DESIGN • LOCAL DEMO • NO FAKE PARTNERSHIPS</span></footer>
+</main></div>
+<dialog id="appDialog" aria-labelledby="dialogTitle"><form id="appForm" method="dialog" class="dialog-form"><header><div><span class="eyebrow">CAREER RECORD</span><h2 id="dialogTitle">New application</h2></div><button type="button" class="dialog-close" id="closeDialog" aria-label="Close form">×</button></header><input type="hidden" id="editId">
+ <div class="two-fields"><label>Company name<input id="formCompany" required minlength="2" maxlength="120" placeholder="Acme Technologies"></label><label>Position<input id="formRole" required minlength="2" maxlength="160" placeholder="AI Engineer Intern"></label></div>
+ <div class="two-fields"><label>Stage<select id="formStage"><option value="saved">Saved</option><option value="applied">Applied</option><option value="screening">Screening</option><option value="interview">Interview scheduled</option><option value="completed">Completed</option><option value="offer">Offer</option><option value="rejected">Rejected</option></select></label><label>Interview date & time<input id="formInterview" type="datetime-local"></label></div>
+ <div class="two-fields"><label>Application date<input id="formApplied" type="date"></label><label>Location / remote<input id="formLocation" maxlength="160" placeholder="Remote"></label></div>
+ <label>Job description<textarea id="formJD" rows="2" maxlength="6000" placeholder="Paste the job requirements (optional)"></textarea></label>
+ <label>Personal notes<textarea id="formNotes" rows="2" maxlength="3000" placeholder="Recruiter details, links, preparation notes…"></textarea></label>
+ <label>Actual recruiter feedback<textarea id="formFeedback" rows="2" maxlength="3000" placeholder="Paste feedback you received. Leave blank if none."></textarea></label>
+ <footer><button type="button" class="danger-btn" id="deleteApp" hidden>Delete application</button><button type="button" class="secondary" id="cancelDialog">Cancel</button><button class="primary" id="saveApp" type="submit">SAVE APPLICATION</button></footer></form></dialog>
+<dialog id="mailDialog"><form id="mailForm" method="dialog" class="dialog-form"><header><div><span class="eyebrow">REVIEW BEFORE IMPORT</span><h2>Confirm email evidence</h2></div><button type="button" class="dialog-close" id="closeMailDialog" aria-label="Close">×</button></header><input id="mailSuggestionId" type="hidden"><label>Company<input id="mailCompany" required minlength="2"></label><label>Role<input id="mailRole" required minlength="2"></label><div class="two-fields"><label>Stage<select id="mailStage"><option value="applied">Applied</option><option value="screening">Screening</option><option value="interview">Interview scheduled</option><option value="completed">Completed</option><option value="offer">Offer</option><option value="rejected">Rejected</option></select></label><label>Confirmed interview date<input id="mailDate" type="datetime-local"></label></div><label>Update an existing application (optional)<select id="mailExisting"><option value="">Create new application</option></select></label><p class="fine">You control what gets saved. Check the original email before confirming date, time, or status.</p><footer><button type="button" class="secondary" id="cancelMail">Cancel</button><button type="submit" class="primary">CONFIRM & IMPORT</button></footer></form></dialog>
+</body></html>

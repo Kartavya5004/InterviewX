@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#171d19" />
+  <meta name="description" content="Create your InterviewX account, then grow your interview skills through real spoken practice." />
+  <title>InterviewX — Your career starts here</title>
+  <link rel="stylesheet" href="/static/auth.css" />
+  <script src="/static/login.js" defer></script>
+</head>
+<body>
+  <main class="auth-layout">
+    <section class="story" aria-label="About InterviewX">
+      <div class="brand"><div class="brand-icon">i<span>X</span><i></i></div><div class="brand-type"><strong>Interview<span>X</span></strong><small>THE INTERVIEW INTELLIGENCE STUDIO</small></div></div>
+      <div class="story-center">
+        <p class="eyebrow"><span class="sparkle">✳</span> INTERVIEWX / YOUR NEXT CHAPTER</p>
+        <h1>Don't just<br><em>get ready.</em><br><span>Get better.</span></h1>
+        <p class="story-desc">Practice out loud. Turn every weak answer into a stronger one. Build a career story that can stand up to hard questions.</p>
+        <div class="visual" aria-hidden="true">
+          <div class="grid-lines"></div>
+          <div class="halo halo-one"></div><div class="halo halo-two"></div>
+          <div class="center-glyph">X</div>
+          <div class="floating floating-a">◉ &nbsp; VOICE-FIRST PRACTICE</div>
+          <div class="floating floating-b">↗ &nbsp; PERFORMANCE DNA</div>
+          <div class="floating floating-c">✳ &nbsp; ANSWER EVOLUTION</div>
+        </div>
+      </div>
+      <footer class="story-footer"><span>01 / PRACTICE</span><span>02 / UNDERSTAND</span><span>03 / EVOLVE</span></footer>
+    </section>
+    <section class="login-side">
+      <div class="auth-head"><span class="auth-head-dot"></span> ACCESS / CAREER STUDIO <span class="head-version">v3.0</span></div>
+      <div class="form-zone">
+        <div class="intro-kicker">YOUR SPACE. YOUR PROGRESS.</div>
+        <h2 id="formTitle">Welcome<br><span>back.</span></h2>
+        <p id="formSubtitle">Sign in to pick up where your last interview left off.</p>
+        <div class="tab-row" role="tablist" aria-label="Account action">
+          <button class="tab active" type="button" id="signInTab" role="tab" aria-selected="true">SIGN IN</button>
+          <button class="tab" type="button" id="registerTab" role="tab" aria-selected="false">CREATE ACCOUNT</button>
+        </div>
+        <form id="authForm" autocomplete="on" novalidate>
+          <div class="field hidden" id="nameField"><label for="name">YOUR NAME</label><input id="name" name="name" type="text" autocomplete="name" placeholder="How should we call you?" maxlength="80" /></div>
+          <div class="field"><label for="email">EMAIL ADDRESS</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required maxlength="254" /></div>
+          <div class="field"><div class="field-label"><label for="password">PASSWORD</label><span id="passwordNote">PRIVATE & SECURE</span></div><div class="password-wrap"><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required maxlength="128" /><button id="togglePassword" type="button" aria-label="Show password">SHOW</button></div></div>
+          <p id="passwordHelp" class="password-help hidden">Use at least 10 characters. A passphrase is a good choice.</p>
+          <div id="authError" class="error hidden" role="alert" aria-live="polite"></div>
+          <button id="submitAuth" type="submit" class="submit">ENTER INTERVIEWX <span>↗</span></button>
+        </form>
+        <div class="privacy-note"><span aria-hidden="true">◈</span><p>Your interview history belongs to your account. Email and password login is implemented now; Optional Google Gmail and Calendar access is available after sign-in, and requires your explicit permission.</p></div>
+      </div>
+      <footer class="right-footer"><span>INTERVIEWX / THE CAREER INTELLIGENCE PLATFORM</span><span>LOCAL DEMO • ACCOUNT PROTECTED</span></footer>
+    </section>
+  </main>
+</body>
+</html>

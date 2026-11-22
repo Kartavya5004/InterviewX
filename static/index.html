@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#171c18" />
+  <title>InterviewX — The Voice Interview Studio</title>
+  <meta name="description" content="A voice-first adaptive interview practice studio with live coaching, technical feedback and answer repair." />
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="rail" aria-label="Main navigation">
+    <div class="logo-block">
+      <div class="logo-mark"><span>i</span><b>X</b><i></i></div>
+      <div><strong>Interview<span>X</span></strong><small>THE VOICE STUDIO</small></div>
+    </div>
+    <div class="rail-category">YOUR WORKSPACE</div>
+    <button class="rail-link active" type="button" data-view="setup"><span class="rail-glyph">▦</span> Overview <span class="nav-index">01</span></button>
+    <button class="rail-link" type="button" data-view="interview"><span class="rail-glyph">◉</span> Interview room <span class="nav-index">02</span></button>
+    <button class="rail-link" type="button" data-view="insights"><span class="rail-glyph">◫</span> Performance DNA <span class="nav-index">03</span></button>
+    <a class="rail-link" href="/career"><span class="rail-glyph">↗</span> Career cockpit <span class="nav-index">04</span></a>
+    <div class="rail-category rail-category-second">PRACTICE ENGINE</div>
+    <div class="rail-feature"><span class="small-bullet lime"></span> Adaptive questioning</div>
+    <div class="rail-feature"><span class="small-bullet orange"></span> Communication diagnosis</div>
+    <div class="rail-feature"><span class="small-bullet purple"></span> Answer reconstruction</div>
+    <div class="rail-bottom">
+      <div class="service-indicator"><span id="apiDot" class="service-dot"></span><div><b id="aiLabel">Connecting…</b><small id="aiSub">Checking interview engine</small></div></div>
+      <div class="account-mini"><b id="accountName">Your account</b><span id="accountEmail"></span></div><button id="signOut" class="signout-btn" type="button">↗ Sign out</button><p>VOICE-FIRST / VERSION 3.0</p>
+    </div>
+  </aside>
+  <main class="content">
+    <div class="topbar">
+      <div class="crumb">INTERVIEWX <span>/</span> <strong id="crumbLabel">OVERVIEW</strong></div>
+      <div class="topbar-right"><span class="pill black-pill"><span class="status-dot"></span> TRAINING SYSTEM</span><span class="topavatar" id="topAvatar">IX</span></div>
+    </div>
+    <div class="banner hidden" id="notice" role="status" aria-live="polite"></div>
+
+    <section class="view" id="setup">
+      <div class="overview-hero">
+        <div class="hero-type"><span class="eyebrow">INTERVIEW PREP, REENGINEERED</span><h1>The interview is<br><em>no longer silent.</em></h1><p>Have a real spoken conversation. Get challenged on your own projects, see exactly where your answers lose clarity, then rebuild them stronger.</p><div class="hero-proof"><span>◉ VOICE-TO-VOICE</span><span>✳ ROLE-AWARE</span><span>↗ REPLAY & IMPROVE</span></div></div>
+        <div class="hero-art" aria-hidden="true"><div class="hero-spotlight"><div class="hero-ring r1"></div><div class="hero-ring r2"></div><div class="hero-center">X</div></div><span class="floating-tag tag-one">LISTENING / READY</span><span class="floating-tag tag-two">YOUR POTENTIAL, DECODED.</span><span class="hero-corner">01—04</span></div>
+      </div>
+      <div class="section-heading"><div><span class="eyebrow">01 / SETUP</span><h2>Build your interview profile.</h2></div><button class="text-button" id="loadDemo" type="button">✳ Fill with demo candidate</button></div>
+      <div class="setup-grid">
+        <div class="panel-card form-card">
+          <div class="field-row"><div class="field"><label for="role">Target role</label><input id="role" maxlength="120" value="AI Engineer Intern" placeholder="AI Engineer Intern" /></div><div class="field"><label for="company">Company / team</label><input id="company" maxlength="120" value="Northstar Labs" placeholder="Company name" /></div></div>
+          <div class="field"><label for="resume">Resume / project claims <span>What should the AI challenge?</span></label><textarea id="resume" rows="4" maxlength="12000" placeholder="Paste the relevant experience and projects from your resume."></textarea></div>
+          <div class="field"><label for="jd">Job description <span>What skills matter for this role?</span></label><textarea id="jd" rows="4" maxlength="12000" placeholder="Paste requirements from the job description."></textarea></div>
+          <label class="mode-label">Choose your challenger</label>
+          <div class="mode-grid" role="group" aria-label="Interview mode">
+            <button type="button" class="mode-option selected" data-mode="technical"><span class="mode-icon">⌘</span><b>Technical</b><small>Depth & decisions</small></button>
+            <button type="button" class="mode-option" data-mode="project"><span class="mode-icon">◇</span><b>Project defense</b><small>Prove your claims</small></button>
+            <button type="button" class="mode-option" data-mode="pressure"><span class="mode-icon">⚡</span><b>Challenge mode</b><small>Defend trade-offs</small></button>
+          </div>
+          <div class="setup-footer"><p>Your transcript is stored locally by this prototype. With Gemini enabled, text is sent to the AI provider. Raw microphone audio is not uploaded by InterviewX.</p><button id="startBtn" type="button" class="button button-dark">ENTER INTERVIEW ROOM <span>↗</span></button></div>
+        </div>
+        <div class="setup-aside">
+          <div class="feature-poster"><span class="eyebrow">A BETTER KIND OF PRACTICE</span><div class="poster-numeral">03<span>×</span></div><h3>Not just another<br>Q&A bot.</h3><p>Speak your answer. Defend your reasoning. See measurable transcript signals and specific coaching.</p><div class="poster-divider"></div><div class="poster-grid"><div><b>01</b><span>Voice conversation</span></div><div><b>02</b><span>Feedback DNA graph</span></div><div><b>03</b><span>Answer Time Machine</span></div></div></div>
+          <div class="aside-note"><span class="note-icon">✳</span><p><b>Judge-ready moment</b><br>Give a weak answer, receive a pointed follow-up, then compare your rewritten or spoken retry against the original.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view hidden" id="interview">
+      <div class="view-heading"><div><span class="eyebrow">02 / LIVE SESSION</span><h1>The interview room<span class="dot-accent">.</span></h1><p id="interviewCaption">Role-aware questions. Spoken answers. Evidence-based feedback.</p></div><div class="session-actions"><span class="round-label" id="roundLabel">ROUND 01 / 04</span><button type="button" id="goInsights" class="outline-action">VIEW INSIGHTS ↗</button></div></div>
+      <div class="interview-layout">
+        <div class="interview-main">
+          <div class="voice-stage" id="voiceStage">
+            <div class="voice-stage-top"><span class="stage-caption">INTERVIEWER / INTERVIEWX AI</span><span class="voice-state" id="voiceState">READY TO SPEAK</span></div>
+            <div class="orb-zone"><div class="orbit-label orbit-left">CONVERSATION<br>IN PROGRESS</div><div class="orb" id="orb"><div class="orb-inside">ix<span>◦</span></div></div><div class="orbit-label orbit-right">VOICE<br>ENGINE 02</div></div>
+            <div class="waveform" aria-hidden="true" id="waveform"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <p class="voice-hint" id="voiceHint">The interviewer will speak the question aloud. Then your microphone can open automatically.</p>
+            <div class="voice-tools"><button class="stage-button soft" type="button" id="repeatQuestion">↻ Replay question</button><button class="stage-button solid" type="button" id="micButton">◉ Start speaking</button><button class="stage-button soft" type="button" id="endSpeaking" disabled>■ Finish answer</button></div>
+          </div>
+          <div class="question-card"><div class="question-head"><span class="eyebrow">CURRENT QUESTION</span><span class="question-num" id="questionIndex">01 / 04</span></div><h2 id="questionText">Your first question will appear when you start a session.</h2><div class="question-footer"><span id="questionSkill">PROJECT DEFENSE</span><span id="questionMode">Technical round</span></div></div>
+          <div class="transcript-card"><div class="card-head"><div><span class="eyebrow">LIVE TRANSCRIPT</span><h3>Your words, as you speak.</h3></div><span id="transcriptStatus" class="transcript-pill">WAITING</span></div><p class="transcript-copy" id="transcriptPreview">Your spoken answer will appear here in real time. You can correct transcription errors before sending it for analysis.</p><details class="transcript-edit"><summary>Edit transcript / typing fallback</summary><textarea id="answerText" rows="4" maxlength="4000" aria-label="Answer transcript" placeholder="Your words appear here while recording. You can type if speech recognition isn't available."></textarea></details><div class="transcript-bottom"><div class="confidence-wrap"><label for="confidence">YOUR SELF-RATED CONFIDENCE</label><div class="confidence-control"><input id="confidence" type="range" min="0" max="100" value="65"/><strong id="confidenceValue">65%</strong></div><small>How confident do YOU feel? We cannot infer psychological confidence from your voice.</small></div><button id="submitAnswer" class="button button-orange" type="button">ANALYZE THIS ANSWER ↗</button></div></div>
+          <div id="inlineFeedback" class="inline-feedback hidden"><div class="feedback-top"><div><span class="eyebrow">COACH'S NOTES</span><h3 id="quickHeadline">Your answer, decoded.</h3></div><span id="quickMode" class="tiny-tag"></span></div><p id="quickGap" class="quick-gap"></p><div class="quick-answer"><b>What a stronger answer sounds like</b><p id="quickIdeal"></p></div><div class="quick-actions"><button class="outline-action" id="readFeedback" type="button">♪ Hear feedback</button><button class="button button-dark" id="nextQuestion" type="button">NEXT QUESTION ↗</button></div></div>
+        </div>
+        <div class="interview-side">
+          <div class="side-card charcoal"><div class="side-head"><span class="eyebrow">SPEECH SIGNALS</span><span class="live-badge">● LIVE</span></div><div class="speech-grid"><div><b id="paceLive">—</b><span>Words / min</span></div><div><b id="fillersLive">0</b><span>Filler words</span></div><div><b id="wordsLive">0</b><span>Words said</span></div><div><b id="pausesLive">—</b><span>Pause cues*</span></div></div><p class="micro-note">*Approximate transcript timing, not voice-emotion detection.</p></div>
+          <div class="side-card"><span class="eyebrow">PRACTICE DNA</span><h3>Skill signals</h3><div id="liveSkillBars" class="skill-bars"><p class="empty-hint">Your first evaluated answer will populate these bars.</p></div><p class="micro-note">AI rubric when connected; otherwise demo structure proxies.</p></div>
+          <div class="side-card side-settings"><span class="eyebrow">VOICE PREFERENCES</span><label class="toggle-row"><span><b>Voice-first mode</b><small>Speak questions aloud</small></span><input id="voiceEnabled" type="checkbox" checked/></label><label class="toggle-row"><span><b>Auto-open microphone</b><small>After the AI finishes speaking</small></span><input id="autoListen" type="checkbox" checked/></label><label class="toggle-row"><span><b>End after silence</b><small>About 3.5 seconds; may be premature</small></span><input id="autoSubmit" type="checkbox" checked/></label><label class="field voice-select" for="voiceSelect">INTERVIEWER VOICE<select id="voiceSelect"><option value="">System default</option></select></label><div id="voiceSupport" class="support-text">Checking your browser's speech tools…</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view hidden" id="insights">
+      <div class="view-heading"><div><span class="eyebrow">03 / YOUR PERFORMANCE</span><h1>Performance <em>DNA.</em></h1><p>What you explained well, what needs work, and how to respond with more precision.</p></div><button class="outline-action" id="backInterview" type="button">← INTERVIEW ROOM</button></div>
+      <div class="insight-kpis"><div class="insight-kpi cream"><span>OVERALL PRACTICE INDEX</span><b id="avgScore">—</b><small>Not a hiring prediction</small></div><div class="insight-kpi lime-bg"><span>TECHNICAL DEPTH</span><b id="techScore">—</b><small id="techFootnote">Based on answer evaluation</small></div><div class="insight-kpi orange-bg"><span>CLARITY & STRUCTURE</span><b id="commScore">—</b><small>Transcript-derived practice signals</small></div><div class="insight-kpi purple-bg"><span>SELF-CONFIDENCE GAP</span><b id="gapScore">—</b><small>Self-rating minus practice score, absolute</small></div></div>
+      <div class="analytics-grid"><div class="data-card radar-card"><div class="card-head"><div><span class="eyebrow">PERFORMANCE FINGERPRINT</span><h3>How your answers land.</h3></div><span class="tiny-tag" id="radarMode">AWAITING DATA</span></div><div class="radar-wrap"><svg id="radarChart" viewBox="0 0 430 345" role="img" aria-label="Five-axis performance radar chart"></svg></div><div class="radar-legend"><span><i class="legend-dot lime"></i> Your current pattern</span><span><i class="legend-dot orange"></i> Next practice priority</span></div><p class="micro-note">Five rubric dimensions. Delivery is a rough pace/filler proxy when you use speech; unmeasured for typed answers.</p></div><div class="data-card trend-card"><div class="card-head"><div><span class="eyebrow">QUESTION-BY-QUESTION</span><h3>Your growth curve.</h3></div><span id="answeredBadge" class="tiny-tag">0 ANSWERS</span></div><svg id="trendChart" viewBox="0 0 430 180" role="img" aria-label="Practice scores by question"></svg><div class="score-rows" id="dimensionRows"></div></div></div>
+      <div class="analytics-lower"><div class="data-card answer-history"><div class="card-head"><div><span class="eyebrow">ANSWER FORENSICS</span><h3>Review each moment.</h3></div><span class="tiny-tag">EVIDENCE-BASED</span></div><div id="historyList" class="history-list"><p class="empty-hint">Finish a question to see evidence-based coaching.</p></div></div><div class="repair-column"><div class="data-card repair-card"><span class="eyebrow">TIME MACHINE / ANSWER REPAIR</span><h3>Try that answer again.</h3><p>Pick a previous question. Speak a stronger version and compare both attempts on the same rubric.</p><label for="retrySelect">QUESTION TO RETRY</label><select id="retrySelect"><option>Answer a question first</option></select><textarea id="retryText" rows="5" maxlength="4000" placeholder="Speak a new answer or type a revised response…"></textarea><div class="repair-controls"><button type="button" id="retryMic" class="outline-action">◉ Speak retry</button><button id="retryBtn" type="button" class="button button-dark">COMPARE ANSWERS ↗</button></div><div id="retryResult" class="retry-result hidden"></div></div><div class="data-card mission-card"><span class="eyebrow">YOUR NEXT MISSION</span><h3 id="missionTitle">Complete one round first.</h3><p id="missionCopy">InterviewX will turn your weakest answer into a focused improvement exercise.</p></div><button id="deleteSession" class="delete-link" type="button">Delete this local interview session</button></div></div>
+      <div class="footer-disclaimer">InterviewX is a practice prototype, not an employment assessment. Technical feedback requires connected AI; demo mode uses structural rules. Speech recognition may be handled by your browser's service. No raw audio is stored on the InterviewX server.</div>
+    </section>
+    <footer class="site-footer"><span>INTERVIEWX / PRACTICE. DECODE. REPEAT.</span><span>MADE FOR LIVE LEARNING, NOT HIRING DECISIONS.</span></footer>
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+INTERVIEWX 3.0 — FAST WINDOWS START
+
+1. Right-click the project ZIP > Extract All.
+2. Open the extracted InterviewX-3.0-Career-OS folder.
+3. Double-click start_windows.bat (keep the terminal open).
+4. Open http://127.0.0.1:8001/login in Chrome or Edge.
+5. Create an account / sign in.
+6. Select Career cockpit in the Voice Studio's left sidebar.
+7. Go to Application pipeline > + TRACK AN APPLICATION to test drag & drop.
+8. Go to Skill prescriptions for courses and personalized missions.
+9. Go to Inbox intelligence > Load fictional examples to demo Gmail-style review.
+10. When ready for REAL Gmail: follow the Google OAuth setup in README.md.
+
+WARNING: If port 8001 is already used by an older app, close that server first.
+Don't open index.html directly or use Live Server; run FastAPI.
+
+DO NOT UPLOAD .env OR THE PRIVATE SQLITE DATABASE TO GITHUB.
